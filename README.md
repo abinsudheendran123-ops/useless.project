@@ -62,7 +62,12 @@ cd battery-roaster
 # Install required Python dependencies
 pip install flask psutil plyer pyttsx3
 # Installation
-[commands]
+[# Clone the repository
+git clone https://github.com/your-username/battery-roaster.git
+cd battery-roaster
+
+# Install required Python dependencies
+pip install flask psutil plyer pyttsx3]
 
 # Run
 [# Start the local daemon & web dashboard
@@ -82,17 +87,34 @@ For Software:
 *Add caption explaining what this shows*
 
 # Diagrams
-![Workflow](Add your workflow/architecture diagram here)
-*Add caption explaining your workflow*
++-------------------------------------------------------------+
+|                     User Hardware Sensors                   |
+|                   (psutil: % & AC Status)                   |
++------------------------------+------------------------------+
+                               |
+                               v
++-------------------------------------------------------------+
+|                 Flask Background Daemon                     |
+|  - Calculates Abuse Index & Durability (0-100)              |
+|  - Maps State to Difficulty Persona (Peaceful/Hard/Toxic)   |
+|  - Evaluates Roast Triggers (Overcharge, Drain, Balanced)   |
++--------------------+---------------------+------------------+
+                     |                     |
+     +---------------+                     +---------------+
+     v                                                     v
++---------------------------+             +---------------------------+
+|    pyttsx3 Audio Engine   |             |   Frontend HUD Dashboard  |
+|  - Non-blocking Thread    |             |  - Minecraft Item GUI     |
+|  - Offline Verbal Abuse   |             |  - Wall of Shame Log      |
+|  - OS Desktop Popups      |             |  - Screen Blindness Mode  |
++---------------------------+             +---------------------------+
 
 For Hardware:
 
 # Schematic & Circuit
-![Circuit](Add your circuit diagram here)
-*Add caption explaining connections*
+N/A — Purely software-based monitoring project running on host machine hardware.
 
-![Schematic](Add your schematic diagram here)
-*Add caption explaining the schematic*
+N/A — No custom physical circuitry required.
 
 # Build Photos
 ![Components](Add photo of your components here)
@@ -113,8 +135,8 @@ For Hardware:
 [Add any extra demo materials/links]
 
 ## Team Contributions
-- [ABIN S]: [Specific: Full-stack design]
-- [ARSHAD ALI AHMED I]: [Specific contributions]
+- [ABIN S]: Full-stack design, Flask daemon implementation, hardware sensor polling via psutil, custom Minecraft UI styling, and accessibility simulation logic.
+- [ARSHAD ALI AHMED I]: pyttsx3 text-to-speech engine integration, multi-tier roast database creation, desktop notification system using plyer, and demo workflow testing.
 
 ---
 Made with ❤️ at TinkerHub Useless Projects 
