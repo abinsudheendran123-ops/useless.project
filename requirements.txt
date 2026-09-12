@@ -1,0 +1,9 @@
+# Python dependencies
+# Core dependencies (works on Vercel)
+Flask==2.3.0
+flask-cors==4.0.0
+
+# Optional local-only dependencies (install for development)
+# psutil==5.9.5  # For real battery monitoring
+# pyttsx3==2.90  # For text-to-speech
+# plyer==2.1.0   # For desktop notifications
